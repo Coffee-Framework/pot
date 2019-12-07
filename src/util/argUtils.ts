@@ -76,7 +76,7 @@ export default class ArgUtils {
         const members = ctx.msg.member.guild.members.filter(m => m.username.toLowerCase().startsWith(argument.toLowerCase())).slice(0, 5);
 
         if (members.length < 1) {
-            await ctx.msg.channel.createMessage(withIcon('<:cross:602260273071652884>', 'Could not find any members.'));
+            await ctx.msg.channel.createMessage(error('Could not find any members.'));
             return null;
         } else if (members.length === 1) {
             return members[0];
